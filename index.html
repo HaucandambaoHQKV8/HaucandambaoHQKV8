@@ -2447,6 +2447,121 @@ window.FIREBASE_CONFIG = {
 
   body:not(.is-root) .root-only{display:none!important}
   label.btnx.is-disabled{opacity:.5;cursor:not-allowed;filter:grayscale(.4);pointer-events:none}
+
+  .syncchip{display:flex;align-items:center;gap:7px;font-size:11.5px;font-weight:600;color:rgba(255,255,255,.88);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);padding:6px 10px;border-radius:999px;flex:none;white-space:nowrap}
+  .syncchip i{width:8px;height:8px;border-radius:50%;background:#e0a83b;display:inline-block}
+  .syncchip.ok i{background:#5fe071}
+  .syncchip.saving i{background:#6ea3e8;animation:pulse 1s infinite}
+  .syncchip.local i{background:#e0a83b}
+  .syncchip.err i{background:#f16565}
+  @keyframes pulse{50%{opacity:.35}}
+  @media (prefers-reduced-motion:reduce){.syncchip.saving i{animation:none}}
+  .loadbar{font-size:12.5px;color:var(--info);background:var(--info-bg);border:1px solid var(--line);padding:8px 12px;border-radius:10px;margin-bottom:12px}
+  .offline{font-size:12.5px;color:var(--warn-ink);background:var(--warn-bg);border:1px solid var(--line);padding:8px 12px;border-radius:10px;margin-bottom:12px}
+  .lastupd{font-size:12px;color:var(--muted);text-align:right}
+  button.openfull{border:0;cursor:pointer;font-family:inherit}
+  button.openfull:focus-visible,.navitem:focus-visible,.domcard:focus-visible,.btnx:focus-visible,.alertrow .go:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+  .subttl{font-size:12.5px;font-weight:700;color:var(--ink-2);margin-bottom:8px}
+  .note{font-size:11.8px;color:var(--muted);margin-top:8px}
+  .chips{display:flex;flex-wrap:wrap;gap:6px}
+  .chip{font-size:12px;background:var(--card-2);border:1px solid var(--line);border-radius:8px;padding:5px 9px;color:var(--ink-2)}
+  .chip b{color:var(--ink);font-weight:700}
+  .dutyline{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px;font-size:12.3px;color:var(--ink-2)}
+  .empty-row td{color:var(--muted);text-align:center;padding:16px 12px}
+  .domcard{cursor:pointer;border:1px solid var(--line);font:inherit;text-align:left}
+  .alertrow .go{cursor:pointer;background:transparent;font-family:inherit}
+  .alert-empty{font-size:13px;color:var(--good-ink);background:var(--good-bg);border:1px solid var(--line);border-radius:11px;padding:12px 14px}
+  .exgrid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:14px}
+  .exbox{border:1px solid var(--line-soft);border-radius:12px;padding:14px;background:var(--card-2);display:flex;flex-direction:column;gap:10px}
+  .exbox h3{font-size:14px;color:var(--navy)}
+  .exrow{display:flex;gap:10px;flex-wrap:wrap}
+  .exrow label{display:flex;flex-direction:column;gap:4px;font-size:11.5px;font-weight:700;color:var(--ink-2)}
+  .exrow input,.exmods input{font:inherit}
+  .exrow input[type=date]{border:1px solid var(--line);border-radius:8px;padding:6px 8px;background:var(--card);color:var(--ink)}
+  .exmods{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 12px;font-size:12.5px;color:var(--ink-2)}
+  .exmods label{display:flex;gap:6px;align-items:center}
+  .exbtns{display:flex;gap:8px;flex-wrap:wrap}
+  .btnx{display:inline-flex;align-items:center;gap:6px;font:700 12.5px/1.2 'Be Vietnam Pro',system-ui,sans-serif;padding:9px 12px;border-radius:9px;border:1px solid var(--line);background:var(--card);color:var(--navy-3);cursor:pointer}
+  .btnx:hover{background:var(--line-soft)}
+  .btnx.pri{background:var(--navy-3);color:#fff;border-color:var(--navy-3)}
+  .exhint{font-size:11.8px;color:var(--muted);margin:0}
+  .exstatus{font-size:12px;color:var(--ink-2)}
+  .modview{position:fixed;left:0;right:0;bottom:0;top:calc(64px + env(safe-area-inset-top,0px));z-index:58;display:flex;flex-direction:column;background:var(--page)}
+  .modview[hidden]{display:none!important}
+  .modbar{display:flex;align-items:center;gap:12px;padding:8px 14px;background:var(--card);border-bottom:1px solid var(--line);flex-wrap:wrap}
+  .backbtn{font:700 13px 'Be Vietnam Pro',system-ui,sans-serif;background:var(--navy-3);color:#fff;border:0;border-radius:9px;padding:8px 13px;cursor:pointer}
+  .modttl{font-weight:800;color:var(--navy);font-size:14.5px;flex:1;min-width:140px}
+  .modstale{font-size:12px;color:var(--warn-ink);background:var(--warn-bg);border-radius:8px;padding:5px 9px;display:flex;gap:8px;align-items:center}
+  .modstale button{font:700 12px inherit;font-family:inherit;border:1px solid var(--line);background:var(--card);border-radius:7px;padding:3px 8px;cursor:pointer;color:var(--navy-3)}
+  .modhost{flex:1;position:relative;min-height:0}
+  .modhost iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#fff}
+  .modhost iframe[hidden]{display:none}
+  .dlg{position:fixed;inset:0;z-index:80;background:rgba(6,12,24,.5);display:flex;align-items:center;justify-content:center;padding:16px}
+  .dlg[hidden]{display:none!important}
+  .dlgbox{background:var(--card);color:var(--ink);border-radius:14px;padding:18px;width:min(460px,100%);box-shadow:0 20px 60px rgba(0,0,0,.35);display:flex;flex-direction:column;gap:10px}
+  .dlgbox h3{font-size:15px;color:var(--navy)}
+  .dlgbox p{margin:0;font-size:13px}
+  .htoast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:100000;background:var(--navy);color:#fff;font-size:13px;padding:10px 16px;border-radius:10px;box-shadow:var(--shadow);display:none;max-width:calc(100% - 32px)}
+  .htoast.on{display:block}
+  .htoast.bad{background:var(--crit)}
+  @media (max-width:1100px){.exgrid{grid-template-columns:1fr}}
+  @media (max-width:780px){.syncchip span{display:none}}
+  /* ---------- Đăng nhập ---------- */
+  .login{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;padding:24px 16px;overflow:auto;
+    background:radial-gradient(120% 90% at 85% 100%,#1f74b8 0%,rgba(31,116,184,0) 60%),linear-gradient(160deg,#0b3564 0%,#0f4a86 55%,#1766b0 100%)}
+  .login[hidden]{display:none!important}
+  .lcard{width:min(460px,100%);border-radius:22px;overflow:hidden;background:#f5f8fc;box-shadow:0 30px 70px -20px rgba(3,18,40,.65),0 2px 6px rgba(3,18,40,.25);margin:auto}
+  .lhead{position:relative;overflow:hidden;text-align:center;color:#fff;padding:28px 24px 26px;background:linear-gradient(135deg,#0d4583 0%,#1360ae 70%,#1a6cc0 100%);border-bottom:3px solid #d8a62a}
+  .lhead::after{content:"";position:absolute;right:-70px;top:-70px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.08)}
+  .lemblem{width:94px;height:94px;margin:0 auto 12px;border-radius:50%;background:#fff;padding:3px;box-shadow:0 8px 22px rgba(0,0,0,.35);position:relative;z-index:1}
+  .lemblem img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block}
+  .lhead .l1{font-weight:800;font-size:16px;letter-spacing:.2px;position:relative;z-index:1}
+  .lhead .l2{font-weight:800;font-size:18px;margin-top:4px;position:relative;z-index:1}
+  .lhead .l3{font-weight:800;font-size:27px;margin-top:4px;letter-spacing:.3px;position:relative;z-index:1}
+  .lbody{padding:24px 28px 26px;display:flex;flex-direction:column}
+  .llbl{font-size:13.5px;font-weight:700;color:#1b3a63;letter-spacing:.3px;margin:4px 0 8px}
+  .lin{height:48px;border:1px solid #cfdae8;border-radius:10px;background:#fff;padding:0 14px;font:500 16px 'Be Vietnam Pro',system-ui,sans-serif;color:#16263d;margin-bottom:14px;outline:none}
+  .lin:focus{border-color:#1766b8;box-shadow:0 0 0 3px rgba(23,102,184,.18)}
+  .lchk{display:flex;align-items:center;gap:10px;font-size:14.5px;color:#1b3a63;margin:2px 0 14px;cursor:pointer}
+  .lchk input{width:20px;height:20px;accent-color:#1766b8}
+  .lbtn{height:48px;border:0;border-radius:10px;background:#1766b8;color:#fff;font:700 16px 'Be Vietnam Pro',system-ui,sans-serif;cursor:pointer;box-shadow:0 8px 18px -8px rgba(23,102,184,.7)}
+  .lbtn:hover{background:#125aa3}
+  .lbtn:disabled{background:#6b93c4;cursor:wait;box-shadow:none}
+  .lbtn:focus-visible{outline:3px solid #d8a62a;outline-offset:2px}
+  .lmsg{margin-top:12px;background:#e7eff9;border-left:3px solid #1766b8;border-radius:10px;padding:11px 14px;font-size:14px;color:#1b3a63}
+  .lmsg.bad{background:#fbe2e2;border-left-color:#c62f2f;color:#a11f1f}
+  /* ---------- Người dùng ---------- */
+  .userwrap{position:relative;flex:none}
+  button.userchip{cursor:pointer;color:#fff;font:inherit;text-align:left}
+  .usermenu{position:absolute;right:0;top:calc(100% + 8px);z-index:70;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);min-width:240px;padding:6px;display:flex;flex-direction:column}
+  .usermenu[hidden]{display:none}
+  .umhead{font-size:11.8px;color:var(--muted);padding:8px 10px;border-bottom:1px solid var(--line-soft);margin-bottom:4px;line-height:1.45}
+  .usermenu button{text-align:left;font:600 13px 'Be Vietnam Pro',system-ui,sans-serif;background:transparent;border:0;border-radius:8px;padding:9px 10px;color:var(--ink);cursor:pointer}
+  .usermenu button:hover{background:var(--card-2)}
+  .modperm{font-size:12px;font-weight:700;border-radius:8px;padding:5px 10px}
+  .modperm.ro{background:var(--warn-bg);color:var(--warn-ink)}
+  .modperm.rw{background:var(--good-bg);color:var(--good-ink)}
+  .uform{display:flex;flex-direction:column;gap:10px}
+  .uform label{display:flex;flex-direction:column;gap:4px;font-size:12px;font-weight:700;color:var(--ink-2)}
+  .uform input,.uform select{font:inherit;font-size:13.5px;border:1px solid var(--line);border-radius:8px;padding:8px 10px;background:var(--card);color:var(--ink)}
+  .uform label.ufchk{flex-direction:row;align-items:center;gap:8px}
+  .ufmods{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 12px;font-size:12.8px;color:var(--ink-2)}
+  .ufmods label{flex-direction:row;align-items:center;gap:6px;font-weight:500;font-size:12.8px}
+  .ufmods[hidden]{display:none}
+  .uact{display:flex;gap:6px;flex-wrap:wrap}
+  .uact button{font:600 12px 'Be Vietnam Pro',system-ui,sans-serif;border:1px solid var(--line);background:var(--card);border-radius:7px;padding:4px 8px;cursor:pointer;color:var(--navy-3)}
+  .uact button:hover{background:var(--card-2)}
+  .perm-chip{display:inline-block;font-size:11.3px;font-weight:600;background:var(--info-bg);color:var(--info);border-radius:6px;padding:2px 7px;margin:1px 3px 1px 0}
+  body:not(.is-admin) .admin-only{display:none!important}
+
+  .btnx:disabled{opacity:.5;cursor:not-allowed;filter:grayscale(.4)}
+  .btnx:disabled:hover{background:var(--card)}
+  .btnx.pri:disabled:hover{background:var(--navy-3)}
+  .rootnote{margin:0;font-size:12px;font-weight:600;color:var(--warn-ink);background:var(--warn-bg);border-radius:8px;padding:7px 10px}
+  body.is-root .rootnote{display:none}
+
+  body:not(.is-root) .root-only{display:none!important}
+  label.btnx.is-disabled{opacity:.5;cursor:not-allowed;filter:grayscale(.4);pointer-events:none}
 </style>
 <div class="login" id="loginView">
   <form class="lcard" id="loginForm" autocomplete="on">
@@ -3110,31 +3225,69 @@ function startFirebase(){
     .then(function(){ return loadScript(FB_BASE+'firebase-firestore-compat.js'); })
     .then(function(){
       firebase.initializeApp(window.FIREBASE_CONFIG);
-      return firebase.auth().signInAnonymously().catch(function(e){ console.warn('Không đăng nhập ẩn danh được', e); });
-    })
-    .then(function(){ return firebase.firestore(); });
+      return firebase.firestore();
+    });
 }
 function startDb(){
   if(fbReady()) return startFirebase();
   return window.claude && window.claude.use ? window.claude.use('db') : Promise.resolve(null);
 }
 
+var fbAuth=null, dataLoaded=false, unsubKv=null;
+function fbMode(){ return !!fbAuth; }
+function loadAllData(){
+  return db.collection('kv').get().then(function(qs){
+    return Promise.all(qs.docs.map(readDoc)).then(function(rows){
+      rows.forEach(function(r){ if(r && r.v!=null){ cache.set(r.k, r.v); docMeta.set(r.k,{ver:r.ver,n:r.n,at:r.at}); } });
+      dataLoaded = true;
+      subscribe();
+    });
+  });
+}
 function boot(){
   setSync('loading');
+  if(fbReady()){
+    startFirebase().then(function(d){
+      db = d; mode='db'; fbAuth = firebase.auth();
+      fbAuth.onAuthStateChanged(function(u){
+        if(u){
+          if(dataLoaded){ return; }
+          loadAllData().then(function(){
+            afterLoad(true);
+            var me = findUserByLogin(u.email);
+            if(me && me.active){ applyUser(me); if(mustChangePw(me)) openPassDlg(true); }
+            else { toast('Tài khoản này chưa được cấp quyền sử dụng phần mềm.', true); fbAuth.signOut(); }
+          }, function(e){
+            console.error(e);
+            lgMsg('Không đọc được dữ liệu: '+(e&&e.code||'lỗi')+'. Kiểm tra lại quy tắc bảo mật Firestore.', true);
+            fbAuth.signOut();
+          });
+        } else {
+          if(dataLoaded){ location.reload(); return; }
+          gateLogin();
+        }
+      });
+    }).catch(function(e){
+      console.error(e);
+      bootLocal('Không kết nối được kho dữ liệu dùng chung ('+(e&&e.code||'lỗi')+').');
+    });
+    return;
+  }
   startDb().then(function(d){
     if(!d){ return bootLocal(); }
     db = d; mode='db';
-    return db.collection('kv').get().then(function(qs){
-      return Promise.all(qs.docs.map(readDoc)).then(function(rows){
-        rows.forEach(function(r){ if(r && r.v!=null){ cache.set(r.k, r.v); docMeta.set(r.k,{ver:r.ver,n:r.n,at:r.at}); } });
-        subscribe();
-        afterLoad();
-      });
-    });
+    return loadAllData().then(function(){ afterLoad(); });
   }).catch(function(e){
     console.error(e);
     bootLocal('Không kết nối được kho dữ liệu dùng chung ('+(e&&e.code||'lỗi')+').');
   });
+}
+/* Chưa đăng nhập: không tải bất kỳ dữ liệu nào, chỉ hiện màn hình đăng nhập */
+function gateLogin(){
+  readyFlag = false;
+  $('#loadBar').hidden = true;
+  setSync('lock');
+  showLogin();
 }
 function bootLocal(reason){
   mode='local';
@@ -3149,7 +3302,7 @@ function bootLocal(reason){
   afterLoad();
 }
 function subscribe(){
-  db.collection('kv').onSnapshot(function(qs){
+  unsubKv = db.collection('kv').onSnapshot(function(qs){
     qs.docChanges().forEach(function(ch){
       if(ch.type==='removed'){
         var dd=ch.doc.data(); if(dd && dd.k && cache.has(dd.k) && !ownVers.has(dd.ver)){ cache.delete(dd.k); changed(dd.k,'remote',true); }
@@ -3174,14 +3327,14 @@ function subscribe(){
   });
 }
 
-function afterLoad(){
+function afterLoad(skipSession){
   ensureInitialData();
   syncStaff();
   readyFlag = true;
   $('#loadBar').hidden = true;
   setSync(mode==='local'?'local':'ok');
   renderAll();
-  restoreSession();
+  if(!skipSession) restoreSession();
 }
 
 /* ================= 3. DỮ LIỆU KHỞI TẠO (đã làm sạch) ================= */
@@ -3965,6 +4118,28 @@ function permText(u){
   var e=(u.edit||[]).map(function(m){ return MODULES[m]?MODULES[m].title:m; });
   return e.length ? 'Cập nhật: '+e.join(', ')+' · các màn hình khác chỉ xem' : 'Chỉ xem';
 }
+var AUTH_MAIL_DOMAIN = 'haucan-hqkv8.vn';
+function mailOf(name){
+  var t=String(name||'').trim().toLowerCase();
+  if(t.indexOf('@')>0) return t;
+  return t.replace(/[^a-z0-9._-]/g,'') + '@' + AUTH_MAIL_DOMAIN;
+}
+function findUserByLogin(name){
+  var m=mailOf(name);
+  return users().find(function(x){ return mailOf(x.username)===m; });
+}
+function pwOkKey(u){ return 'hq8_pwok:'+mailOf(u.username); }
+function mustChangePw(u){
+  if(!u.mustChange) return false;
+  if(fbMode()){ try{ if(localStorage.getItem(pwOkKey(u))) return false; }catch(e){} }
+  return true;
+}
+function saveUsersSafe(list, src){
+  /* Ở chế độ Firebase, chỉ tài khoản Admin được ghi danh sách người dùng (theo quy tắc bảo mật) */
+  if(fbMode() && !isRoot(currentUser)) return false;
+  HQ.set(USERS_KEY, list, src||'users');
+  return true;
+}
 function sha256(text){
   if(window.crypto && crypto.subtle && window.TextEncoder){
     return crypto.subtle.digest('SHA-256', new TextEncoder().encode(text)).then(function(b){ return Array.prototype.map.call(new Uint8Array(b), function(x){ return ('0'+x.toString(16)).slice(-2); }).join(''); });
@@ -3997,10 +4172,34 @@ function applyUser(u){
   if(currentMod && !canEdit(currentMod)) updateModPerm(currentMod);
   renderAll();
 }
+function fbErrMsg(err){
+  var c=err && err.code || '';
+  if(c==='auth/invalid-credential'||c==='auth/wrong-password'||c==='auth/user-not-found'||c==='auth/invalid-email') return 'Tài khoản hoặc mật khẩu không đúng.';
+  if(c==='auth/user-disabled') return 'Tài khoản đã bị khóa trên máy chủ. Liên hệ quản trị viên.';
+  if(c==='auth/too-many-requests') return 'Nhập sai quá nhiều lần. Vui lòng thử lại sau ít phút.';
+  if(c==='auth/network-request-failed') return 'Không kết nối được máy chủ. Kiểm tra lại đường truyền.';
+  if(c==='permission-denied') return 'Tài khoản chưa đủ quyền đọc dữ liệu. Kiểm tra quy tắc bảo mật Firestore.';
+  return (err && err.message) || 'Đăng nhập không thành công.';
+}
+function fbLogin(name, pass, remember){
+  var btn=$('#lgBtn'); btn.disabled=true; btn.textContent='Đang đăng nhập...'; lgMsg('Đang kiểm tra tài khoản trên máy chủ…');
+  var done=function(){ btn.disabled=false; btn.textContent='Đăng nhập'; };
+  var P=firebase.auth.Auth.Persistence;
+  fbAuth.setPersistence(remember ? P.LOCAL : P.SESSION)
+    .then(function(){ return fbAuth.signInWithEmailAndPassword(mailOf(name), pass); })
+    .then(function(){
+      done(); lgMsg('');
+      if(remember) lsSet2('hq8_remember_user', name); else lsSet2('hq8_remember_user', null);
+      $('#lgPass').value='';
+      /* dữ liệu được tải trong onAuthStateChanged */
+    })
+    .catch(function(err){ done(); lgMsg(fbErrMsg(err), true); $('#lgPass').select(); });
+}
 $('#loginForm').addEventListener('submit', function(e){
   e.preventDefault();
   var name=$('#lgUser').value.trim(), pass=$('#lgPass').value;
   if(!name||!pass){ lgMsg('Vui lòng nhập tài khoản và mật khẩu.', true); return; }
+  if(fbMode()){ fbLogin(name, pass, $('#lgRemember').checked); return; }
   if(!readyFlag){ lgMsg('Đang tải dữ liệu, vui lòng thử lại sau giây lát…'); return; }
   var btn=$('#lgBtn'); btn.disabled=true; btn.textContent='Đang đăng nhập...'; lgMsg('Đang kiểm tra tài khoản…');
   var u=findUser(name);
@@ -4015,13 +4214,20 @@ $('#loginForm').addEventListener('submit', function(e){
     ssSet('hq8_session', u.id);
     $('#lgPass').value='';
     var list=users(), me=list.find(function(x){ return x.id===u.id; });
-    if(me){ me.lastLogin=new Date().toISOString(); HQ.set(USERS_KEY, list, 'auth'); }
+    if(me){ me.lastLogin=new Date().toISOString(); saveUsersSafe(list, 'auth'); }
     applyUser(me||u);
     if((me||u).mustChange) openPassDlg(true);
     else toast('Xin chào '+u.username+'. '+permText(u)+'.');
   }, function(err){ done(); lgMsg(err.message, true); });
 });
 function logout(){
+  if(fbMode()){
+    $('#userMenu').hidden=true;
+    try{ if(unsubKv) unsubKv(); }catch(e){}
+    cache.clear(); docMeta.clear(); dataLoaded=false; currentUser=null;
+    fbAuth.signOut().then(function(){ location.reload(); }, function(){ location.reload(); });
+    return;
+  }
   ssSet('hq8_session', null);
   $('#userMenu').hidden=true;
   if(currentMod) showDashboard();
@@ -4049,6 +4255,23 @@ $('#passForm').addEventListener('submit', function(e){
   if(n.length<6){ $('#pwMsg').textContent='Mật khẩu mới cần tối thiểu 6 ký tự.'; return; }
   if(n!==n2){ $('#pwMsg').textContent='Hai lần nhập mật khẩu mới chưa khớp.'; return; }
   if(n===o){ $('#pwMsg').textContent='Mật khẩu mới phải khác mật khẩu hiện tại.'; return; }
+  if(fbMode()){
+    var fu=fbAuth.currentUser;
+    if(!fu){ logout(); return; }
+    $('#pwMsg').textContent='Đang đổi mật khẩu trên máy chủ…';
+    var cred=firebase.auth.EmailAuthProvider.credential(fu.email, o);
+    fu.reauthenticateWithCredential(cred)
+      .then(function(){ return fu.updatePassword(n); })
+      .then(function(){
+        try{ localStorage.setItem(pwOkKey(currentUser), '1'); }catch(e2){}
+        var list2=users(), me2=list2.find(function(x){ return x.id===currentUser.id; });
+        if(me2){ me2.mustChange=false; if(saveUsersSafe(list2,'auth')) currentUser=me2; else currentUser.mustChange=false; }
+        $('#passDlg').hidden=true; forcePass=false; $('#pwMsg').textContent='';
+        toast('Đã đổi mật khẩu trên máy chủ. '+permText(currentUser)+'.');
+      })
+      .catch(function(err){ $('#pwMsg').textContent = (err&&err.code==='auth/invalid-credential')||(err&&err.code==='auth/wrong-password') ? 'Mật khẩu hiện tại không đúng.' : fbErrMsg(err); });
+    return;
+  }
   var list=users(), me=list.find(function(x){ return x.id===currentUser.id; });
   if(!me){ logout(); return; }
   sha256(me.salt+':'+o).then(function(h){
@@ -4167,6 +4390,7 @@ $('#userForm').addEventListener('submit', function(e){
   } else {
     var salt=newSalt();
     sha256(salt+':123456').then(function(h){
+      if(fbMode()) toast('Đã thêm tài khoản trong phần mềm. Phải tạo thêm tài khoản '+mailOf(name)+' trong Firebase Console > Authentication thì người này mới đăng nhập được.', true, 8000);
       list.push({id:'u'+Date.now().toString(36), stt:list.reduce(function(m,x){ return Math.max(m,x.stt||0); },0)+1, username:name, title:$('#ufTitle').value.trim(), role:role, edit:edit, salt:salt, hash:h, active:$('#ufActive').checked, mustChange:true, lastLogin:''});
       saveUsers(list); $('#userDlg').hidden=true; toast('Đã tạo tài khoản '+name+' (mật khẩu mặc định 123456).'); renderUsers();
     });
@@ -4178,11 +4402,12 @@ $('#us_tbody').addEventListener('click', function(e){
   if(b.dataset.uedit) return openUserDlg(b.dataset.uedit);
   var id=b.dataset.ureset||b.dataset.ulock||b.dataset.udel, u=list.find(function(x){ return x.id===id; }); if(!u) return;
   if(b.dataset.ureset){
+    if(fbMode()){ toast('Mật khẩu do máy chủ Firebase quản lý. Vào Firebase Console > Authentication > Users để đặt lại mật khẩu cho '+mailOf(u.username)+'.', true, 7000); return; }
     showConfirm('Đặt lại mật khẩu của '+u.username+' về 123456? Người dùng phải đổi mật khẩu ở lần đăng nhập tiếp theo.', function(){
       var salt=newSalt(); sha256(salt+':123456').then(function(h){ u.salt=salt; u.hash=h; u.mustChange=true; saveUsers(list); toast('Đã đặt lại mật khẩu cho '+u.username+'.'); renderUsers(); });
     });
   } else if(b.dataset.ulock){
-    u.active=!u.active; saveUsers(list); toast((u.active?'Đã mở khóa ':'Đã khóa ')+u.username+'.'); renderUsers();
+    u.active=!u.active; saveUsers(list); toast((u.active?'Đã mở khóa ':'Đã khóa ')+u.username+'.'+(fbMode()?' Để chặn hẳn việc đăng nhập, khóa thêm tài khoản '+mailOf(u.username)+' trong Firebase Console.':''), false, fbMode()?7000:0); renderUsers();
   } else if(b.dataset.udel){
     showConfirm('Xóa tài khoản '+u.username+'? Người dùng này sẽ không đăng nhập được nữa.', function(){ saveUsers(list.filter(function(x){ return x.id!==u.id; })); toast('Đã xóa tài khoản '+u.username+'.'); renderUsers(); });
   }
@@ -4251,7 +4476,7 @@ tick(); setInterval(tick,1000);
 setInterval(function(){ if(readyFlag && !currentMod) renderAll(); }, 60000);
 function setSync(state, text){
   var c=$('#syncChip'); c.className='syncchip '+state;
-  var t={loading:'Đang kết nối…', ok:'Đã lưu · đồng bộ trực tuyến', saving:'Đang lưu…', local:'Lưu trên trình duyệt này', err:text||'Lỗi đồng bộ'}[state]||state;
+  var t={loading:'Đang kết nối…', ok:'Đã lưu · đồng bộ trực tuyến', saving:'Đang lưu…', local:'Lưu trên trình duyệt này', lock:'Chưa đăng nhập · dữ liệu chưa được tải', err:text||'Lỗi đồng bộ'}[state]||state;
   c.querySelector('span').textContent=t; c.title=t;
 }
 (function initExport(){
